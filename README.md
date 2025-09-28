@@ -14,6 +14,7 @@ bash
 
 # Clone the repository
 `git clone https://github.com/Maimoharris/WPUserEnum.git`
+
 `cd wordpress-user-enumeration-poc`
 
 # Install dependencies
